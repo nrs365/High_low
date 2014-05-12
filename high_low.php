@@ -1,26 +1,25 @@
 <?php
 
-// game picks a random number between 1 and 100.
-// - prompts user to guess the number
-// - if user's guess is less than the number, it outputs "HIGHER"
-// - if user's guess is more than the number, it outputs "LOWER"
-// - if a user guesses the number, the game should declare "GOOD GUESS!"
 
+//game picks a random number between 1 and 100
 $number = mt_rand(1,100);
+
+//declaring a variable as an incremeter
 $number_of_guesses = 0;
 
+//ask the user to guess a number
 fwrite(STDOUT, "Guess a number!\n");
 
 do {
-	$guess = fgets(STDIN);
-	$number_of_guesses++;
-	
-	if ($number > $guess) {
+	$guess = fgets(STDIN);//inputs the guess from user
+	$number_of_guesses++;//number of guesses increments by one each loop
+
+	if ($number > $guess) { //if the number is greater than the guess, output higher
 		fwrite(STDOUT, "Higher! Guess again!\n");
-	} else if ($number < $guess) {
+	} else if ($number < $guess) {//if the number is less than the guess, output lower
 		fwrite(STDOUT, "Lower! Guess again!\n");
 	}
-} while ($number != $guess);
+} while ($number != $guess);//loop only while the number and the guess are not the same. then display comment and number of guesses
 	fwrite(STDOUT, "Good Guess!  My number was {$number}! It took {$number_of_guesses} guesses for you to guess my number.\n");
 
 
