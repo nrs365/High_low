@@ -6,7 +6,7 @@
 // - if user's guess is more than the number, it outputs "LOWER"
 // - if a user guesses the number, the game should declare "GOOD GUESS!"
 
-$number = rand(1,100);
+$number = mt_rand(1,100);
 
 
 
@@ -25,7 +25,7 @@ do {
 		echo "Good Guess!  My number was {$number}!\n";
 	}
 } while ($number != $guess);
-	echo "Good guess! My number was {$number}\n";
+	
 
 
 exit(0);
