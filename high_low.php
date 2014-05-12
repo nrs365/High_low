@@ -7,25 +7,21 @@
 // - if a user guesses the number, the game should declare "GOOD GUESS!"
 
 $number = mt_rand(1,100);
-$number_of_guesses = 1;
+$number_of_guesses = 0;
 
 fwrite(STDOUT, "Guess a number!\n");
 
-	
-
 do {
 	$guess = fgets(STDIN);
+	$number_of_guesses++;
+	
 	if ($number > $guess) {
-		echo "Higher!\n";
-		$number_of_guesses++;
-		fwrite(STDOUT, "Guess again: ");
+		fwrite(STDOUT, "Higher! Guess again!\n");
 	} else if ($number < $guess) {
-		echo "Lower!\n";
-		$number_of_guesses++;
-		fwrite(STDOUT, "Guess again ");
+		fwrite(STDOUT, "Lower! Guess again!\n");
 	}
 } while ($number != $guess);
-	echo "Good Guess!  My number was {$number}! It took {$number_of_guesses} guesses for you to guess my number.\n";
+	fwrite(STDOUT, "Good Guess!  My number was {$number}! It took {$number_of_guesses} guesses for you to guess my number.\n");
 
 
 exit(0);
