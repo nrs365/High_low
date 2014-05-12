@@ -1,8 +1,7 @@
 <?php
 
-
-//game picks a random number between 1 and 100
-$number = mt_rand(1,100);
+//user inputs filename followed by range of numbers to choose from
+$number = mt_rand($argv[1], $argv[2]);
 
 //declaring a variable as an incremeter
 $number_of_guesses = 0;
