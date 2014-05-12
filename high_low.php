@@ -1,7 +1,11 @@
 <?php
 
 //user inputs filename followed by range of numbers to choose from
+if ($argc == 3) {
 $number = mt_rand($argv[1], $argv[2]);
+} else {
+	$number = mt_rand(1, 100);
+}
 
 //declaring a variable as an incremeter
 $number_of_guesses = 0;
