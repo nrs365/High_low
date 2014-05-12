@@ -1,9 +1,18 @@
 <?php
 
 //user inputs filename followed by range of numbers to choose from
+if ((!is_numeric($argv[1])) || !is_numeric($argv[2])) {
+	fwrite (STDOUT, "Please input numbers only\n");
+	exit(1);
+}
+
 if ($argc == 3) {
-$number = mt_rand($argv[1], $argv[2]);
+	define('min', $argv[1]);
+	define('max', $argv[2]);
+	$number = mt_rand($argv[1], $argv[2]);
 } else {
+	define('min', 1);
+	define('max', 100);
 	$number = mt_rand(1, 100);
 }
 
